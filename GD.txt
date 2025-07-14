@@ -68,3 +68,21 @@ Elements in GD:(The explainations are given below)
    ● Thank you for asking my opinion on it - Showing gratitude
    ● (name) What do you think about this? - Giving a chance to speak
    ● As (name) once said - Quoting someone popular
+
+
+AI trends in Healthcare:
+1. Remote patient monitoring
+2. Disease detection
+3. Drug discovery
+4. Ai robots revolutionizing endoscopy
+5. Applications of ai in patient care
+6. Clinical trial participant identifier
+7. Dosage error reduction
+8. Hospital Management
+9. Key ai functions in drug discovery
+10. Less invasive surgeries
+11. Medical imaging
+12. Personalized medicine
+13. Predictive maintenance of medical equipment
+14. Symptom checker chatbots
+15. Telehealth
