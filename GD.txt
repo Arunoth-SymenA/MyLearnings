@@ -16,6 +16,8 @@ Follow these:
 7. Do Not Deviate From the Topic
 8. State Your Conclusion
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Elements in GD:(The explainations are given below)
 1. Introduction
 2. Agreeing
@@ -38,8 +40,8 @@ Elements in GD:(The explainations are given below)
  
 3. Disagreeing with:
    ● With due respect, I believe it would not be right to...
-   ● I am afraid, I can only partly gree with that... (soft note)
-   ● I personally feel It wouldn't be okay to...
+   ● I am afraid, I can only partly agree with that... (soft note)
+   ● I personally feel, It wouldn't be okay to...
    ● Though I agree on the broader point, but it seems to me that...
 
 4. Suggesting your Opinion:
@@ -69,6 +71,7 @@ Elements in GD:(The explainations are given below)
    ● (name) What do you think about this? - Giving a chance to speak
    ● As (name) once said - Quoting someone popular
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 AI trends in Healthcare:
 1. Remote patient monitoring
