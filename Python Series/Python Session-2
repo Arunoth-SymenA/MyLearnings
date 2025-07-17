@@ -1,0 +1,60 @@
+15. Multiprocessing vs Multithreading
+Multiprocessing handles different tasks simultaneously. Multithreading handles multiple tasks in one thread.
+
+16. Data cleaning
+Perform EDA and preprocessing.
+
+17. TensorFlow purpose
+Contains libraries for computer vision and ML tasks in Python.
+
+18. Handle missing data
+Use imputation (mean value) or remove nulls.
+
+19. Share data between processes
+Use multithreading.
+
+20. Assert vs Try-Except
+Assert checks parameter values. Try-Except handles errors.
+
+21. Sort array
+arr.sort()
+
+22. Largest element (reduce)
+reduce.max(numbers)
+
+23. Palindrome check
+is_palindrome = (string == string[::-1])
+
+24. Print issue
+Error: a, b, c not declared.
+
+25. Tuple printing
+tup = ([5,1,2],[3,4])
+
+26. Loop with else
+Yes, it runs and prints:
+Loop finished
+Loop finished
+Loop finished
+
+27. Swap variables without temp
+a, b = b, a
+
+28. Lambda function output
+0, 1, 2, 3
+
+29. Concatenate and print
+str = a + b + c
+
+30. Function with args/kwargs
+makefile
+args: 1, 2
+kwargs: 3, 4
+
+31. Set union
+{1,2,3,4,5}
+
+32. Matplotlib line graph
+import matplotlib.pyplot as plt
+y = x**2
+plt.plot(y)
