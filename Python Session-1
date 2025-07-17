@@ -1,0 +1,61 @@
+Questions & Answers
+1. Difference between Python 2 and Python 3
+Python 2 has certain differences and methods, whereas Python 3 has more pre-processing and additional libraries in it.
+
+2. Purpose of self keyword
+The key self is used to point the current position. That is itself.
+
+3. Lists vs Tuples
+Lists are mutable ([] with commas).
+
+Tuples are immutable (() with double quotes).
+
+4. Deep copy vs Shallow copy
+Deep copy copies all content from the root.
+
+Shallow copy gives only a mean clipping copy of it.
+
+5. Purpose of pass in Python
+Used to skip a particular loop or condition.
+
+6. Reverse string without reverse method
+python
+Copy
+Edit
+rev_string = string[::-1]
+
+7. Merge two dictionaries
+python
+Copy
+Edit
+D3 = dict.append(D1, D2)
+
+8. Sort people array using lambda
+python
+Copy
+Edit
+lambda people: sort(dict(people))
+
+9. Purpose of __init__.py
+Used for initializing a Python file which will be present at the end.
+
+10. Virtual environment & purpose
+A VM simulates an application environment without original dependencies.
+
+11. Read CSV using Python
+python
+Copy
+Edit
+read_csv('sample_file.csv')
+
+12. Logging errors
+Errors and status are shown in console. Handle them in separate files if needed.
+
+13. Cursor execution
+a. cursor.execute(f"SELECT * FROM users WHERE name = '{user_input}'")
+b. cursor.execute("SELECT * FROM users WHERE name = ?" (user_input))
+
+a (using .method() is good since it handles keys)
+
+14. Django vs Flask
+Django has additional libraries & packages. Flask is more traditional & lightweight.
