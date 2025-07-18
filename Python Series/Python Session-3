@@ -1,0 +1,36 @@
+33. Return list from keys
+return list(dict.fromkeys(lst))
+
+34. Fibonacci numbers
+def func1(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+35. Purpose of pdb
+Not familiar.
+
+36. SDLC Stages
+Requirements Gathering → Software Building → Debug & Test → Deployment & Iteration
+
+37. Purpose of OOP in Python
+Simpler code, easy to use, reusability.
+
+38. Project management tools
+Git, Documentation.
+
+39. Code management & collaboration
+Maintaining iterations, working with multiple developers.
+
+40. What is CI/CD?
+Pipeline to automate processes step-by-step.
+
+41. Distance between two points
+a, b = 10, 12
+print("distance:", abs(a - b))
+
+42. Centroid of polygon
+r = int(input())
+p = 3.14 * r * r
+print(p)
