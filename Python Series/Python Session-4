@@ -1,0 +1,42 @@
+43. Asyncio example
+
+import asyncio
+
+async def task(name, duration):
+    print(f"{name} started")
+    await asyncio.sleep(duration)
+    print(f"{name} finished")
+
+async def main():
+    await asyncio.gather(task("Task1", 2), task("Task2", 1), task("Task3", 3))
+
+asyncio.run(main())
+
+44. Enum usage
+
+from enum import Enum
+
+class Color(Enum):
+    RED = 1
+    GREEN = 2
+    BLUE = 3
+
+45. Define MQTT
+Message transfer protocol for IoT.
+
+46. Time-series data in IoT
+Google Sheets or Firebase.
+
+47. Find anomalies
+for i in range(len(data)):
+    if i != sorted(data)[i]:
+        print("Anomaly:", i)
+
+48. Secure password storage
+Use hash codes.
+
+49. What is CORS?
+Not familiar.
+
+50. JWT for authentication
+Use JWT with OAuth 2.0 for secure sessions.
