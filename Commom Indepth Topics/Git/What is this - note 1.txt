@@ -1,0 +1,21 @@
+PROBLEM:
+YOUR-SYSTEM@LAPTOP-NAME:~/Downloads/Projects/frontend$ git pull origin dev
+remote: Enumerating objects: 2, done.
+remote: Total 2 (delta 0), reused 0 (delta 0), pack-reused 2 (from 1)
+Unpacking objects: 100% (2/2), 535 bytes | 59.00 KiB/s, done.
+From https://gitlab.anonymous.com/anonymous/application-source/dash/frontend
+ * branch            dev        -> FETCH_HEAD
+   5f644c3..32387d5  dev        -> origin/dev
+Updating 0852def..32387d5
+Fast-forward
+
+
+DEFINITION:
+This terminal output indicates that you have successfully updated your local code with the latest changes from the remote server. Here is a breakdown of what happened:
+● git pull origin dev: You requested to fetch the latest code from the dev branch on the remote server (GitLab) and merge it into your current local branch.
+● Updating 0852def..32387d5: Git identified that your local version was at commit 0852def and the remote version was ahead at 32387d5.
+● Fast-forward: This is the most important part. It means your local branch had no new unique changes compared to the server. Git simply "moved the pointer" forward to the latest commit without needing to create a merge commit or resolve conflicts.
+● Successful Sync: Your local files in ~/Downloads/Projects/frontend are now perfectly in sync with the dev branch on the GitLab repository. 
+
+Next Steps:
+Since you are in a frontend directory, you may need to run npm install or yarn install if the pulled changes included updates to the package.json file.
