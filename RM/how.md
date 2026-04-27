@@ -1,92 +1,23 @@
-# How Release Management works (Frontend perspective)
+# How Release Management works (End-to-End Flow)
 
-This document explains the end-to-end frontend flow using screens, interactions, and lifecycle stages.
+This document explains the step-by-step frontend workflow mapping to the GraphQL tier.
 
-## 1) App routing and entry points
+## 1) Initialization (The Draft Stage)
+1. User clicks **Add New Release**, triggering the `AddModal`.
+2. Upon saving valid input (Dates, Name, Note, Rollback), the frontend fires `CreateRelease(input)`. 
+3. The table refreshes via `listreleasebyparent()`. The release is placed in the **Draft** stage.
 
-- Release Management is accessible within the main DevOpsArk app.
-- Release list page opens the main dashboard.
-- Selecting a release opens the release detail page.
+## 2) Task Assignment
+1. Selecting the release routes the user to the Task List.
+2. Clicking 'Add Task' opens a modal. Saving fires `CreateTaskRelease(input)` to bind sub-tasks to the specific release.
 
-## 2) List page flow
+## 3) Acceptance Workflow
+1. Once ready, the user triggers the "Send Acceptance Mail", firing the `SendTaskAcceptanceEmail` mutation.
+2. Assignees locate their assignments via `listtaskReleasebytaskAssignedToPerson` in the **My Tasks** screen.
+3. Upon accepting, `UpdateTaskRelease(input)` changes the specific task status from Draft to **Accepted**.
+4. With all sub-tasks accepted, the UI unlocks the **Send Confirmation Mail** action (`SendConfirmationEmail`). Success shifts overall tasks to **Accepted**.
 
-On load, the release list page:
-
-1. Fetches all releases for the selected project/context.
-2. Displays them in a table with status and timeline.
-3. Allows selection for viewing and actions.
-
-The list page provides actions:
-
-- **Add New Release** -> opens create release form/modal  
-- **Select Release** -> navigates to release detail page  
-
-## 3) Create flow (Release creation)
-
-In the create release form:
-
-1. User enters:
-   - Release name  
-   - Release type (Normal/Emergency)  
-   - Start and end date/time  
-   - Optional notes and rollback plan  
-2. UI validates required fields.
-3. On save, release is created in **Draft** stage.
-4. Release appears in the list and is ready for further configuration.
-
-## 4) Task management flow
-
-Inside the release detail page:
-
-1. User adds tasks with:
-   - Title and description  
-   - Assignee (user/group)  
-   - Schedule (start date/time)  
-2. Tasks are listed and tracked within the release.
-3. Users can view assigned tasks under **My Tasks**.
-
-## 5) Acceptance flow
-
-1. User triggers **Acceptance Mail**.
-2. Assigned users receive and accept tasks.
-3. Task status moves from **Draft → Accepted**.
-4. System ensures all tasks are accepted before proceeding.
-
-## 6) Confirmation flow
-
-1. Once all tasks are accepted, **Confirmation Mail** becomes available.
-2. User sends confirmation.
-3. Upon acceptance, overall task/release readiness is confirmed.
-
-## 7) Execution flow
-
-1. Release stage moves from **Draft → Ready**.
-2. User starts the release by marking it **In Progress**.
-3. Tasks are executed and progress is tracked.
-
-## 8) Tracking and visibility
-
-- Users monitor assigned work via **My Tasks**.
-- Release detail page shows:
-  - Task statuses  
-  - Overall release stage  
-  - Timeline progress  
-
-## 9) Closure flow
-
-After execution:
-
-1. User selects closure status:
-   - **Closed Complete** (all tasks successfully done)  
-   - **Closed Incomplete** (partial or failed execution)  
-2. Release stage updates accordingly.
-3. Release is finalized and recorded.
-
-## 10) Supporting UX behavior
-
-- Table-based release listing with status indicators  
-- Form-based creation and task assignment  
-- Stage-based workflow visibility  
-- Mail-triggered approval system (Acceptance & Confirmation)  
-- Real-time status updates across tasks and releases  
-- Clear lifecycle transitions for controlled execution
+## 4) Execution (Ready to Closed)
+1. Returning to the main Release page, the stage becomes **Ready**.
+2. To begin, the user selects **In Progress**, which triggers `UpdateRelease` (and optionally `SendProgressEmail`) to inform stakeholders.
+3. Upon finishing the release activities, the user closes it out using `UpdateRelease`, designating it as **Closed Complete** or **Closed Incomplete**.
