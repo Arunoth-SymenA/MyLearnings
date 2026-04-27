@@ -2,26 +2,14 @@
 
 This is a location guide for the Dashboard frontend implementation and its key dependencies.
 
-## Main frontend locations
-
-- App root and routing: `frontend/src/App.tsx` and `frontend/src/main.tsx`
-- Dashboard main pages: 
-  - `frontend/src/pages/Dashboard.tsx`
-  - `frontend/src/pages/NewDashboard.tsx`
-- Dashboard sub-components: `frontend/src/pages/DashboardContent/`
-- Reusable UI cards: `frontend/src/components/DashBoard-card/`
-- Quick Onboard wizard: `frontend/src/pages/QuickonboardProject/`
-- GraphQL/Apollo client setup (for live feeds): `frontend/src/utils/apolloClient.ts`
-- External Design Library: `@devopsark/design` (provides Navbar and Sidebar)
-
 ## Where navigation commands point
 
 The Quick Actions grid navigates to various sibling modules within the `src/pages/` directory:
 
-- `Add ArkApp` -> `frontend/src/pages/AddArkapp/AddArkappPage.tsx`
-- `Add ArkBuilder` -> `frontend/src/pages/AddBuilder/AddArkbuilderPage.tsx`
-- `Add Cluster` -> `frontend/src/pages/AddCluster/AddKubernetesClusterPage.tsx`
-- `Quick Onboard` -> `frontend/src/pages/QuickonboardProject/Quickonboard.tsx`
+- `Add ArkApp`
+- `Add ArkBuilder`
+- `Add Cluster`
+- `Quick Onboard`
 
 ## Where users interact in UI
 
