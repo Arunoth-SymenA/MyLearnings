@@ -1,30 +1,9 @@
 # Why Release Management exists in DevOpsArk
 
-Release Management exists to provide teams with a structured and reliable way to plan and execute releases without relying on scattered communication and manual coordination.
+Release Management exists to bridge the gap between people and technical execution. By organizing people and tracking tasks via explicit GraphQL-backed actions, you guarantee smoother rollouts.
 
 ## Core reasons
 
-- **Centralized coordination:** All release activities, tasks, and timelines are managed in one place.
-- **Team alignment:** Tasks are clearly assigned to users or groups, ensuring ownership and accountability.
-- **Structured workflow:** Releases follow defined stages (Draft → Ready → In Progress → Closed).
-- **Approval-driven execution:** Acceptance and confirmation flows ensure tasks are acknowledged before execution.
-- **Risk management:** Rollback plans and controlled transitions reduce deployment risks.
-
-## Why it is useful for DevOpsArk platform goals
-
-Release Management aligns with DevOpsArk’s goal of centralizing and standardizing delivery operations.
-
-- It integrates with shared UI components (`Table`, `Forms`, `Modals`, `Sidebar`) for a consistent experience.
-- It brings release planning and execution into the same platform as other DevOps workflows.
-- It ensures visibility of release progress across teams within a single system.
-
-## Why workflow control matters
-
-The module enforces structured interactions before and during execution:
-
-- Tasks must be accepted before proceeding
-- Confirmation ensures readiness across all stakeholders
-- Stage transitions prevent premature execution
-- Closure states clearly define release outcomes
-
-This reduces miscommunication, avoids incomplete execution, and improves overall release reliability.
+- **Transparency:** Centralized lists (`listreleasebyparent` and `listtaskReleasebyparent`) provide a single source of truth rather than disconnected chats.
+- **Alignment:** Using mutations like `SendTaskAcceptanceEmail` ensures timelines and responsibilities are formally agreed upon before work begins.
+- **Operational consistency:** The module uses DevOpsArk's shared primitives (Tables, Modals, Action Buttons), while applying safe bulk mutations (like `DeleteRelease`/`DeleteTaskRelease`) with error handling mapped out to toasts.
