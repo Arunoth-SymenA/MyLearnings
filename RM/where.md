@@ -1,58 +1,30 @@
-# Where Release Management lives and where each operation is handled
+# Where Release Management lives and where tasks are handled
 
-This is a location guide for the Release Management module and its key operations.
+This is a location guide for the Release Management frontend and its GraphQL operations.
 
 ## Main frontend locations
 
-- App root and routing: `frontend/src/App.tsx`
-- Release list page: `frontend/src/pages/release/index.tsx`
-- Release page helper/GraphQL utilities: `frontend/src/pages/release/handler.ts`
-- Release detail page: `frontend/src/pages/release/ReleaseDetail.tsx`
-- Create release modal/page: `frontend/src/components/release/AddReleaseModal.tsx`
-- Task creation modal: `frontend/src/components/release/AddTaskModal.tsx`
-- Update/interaction components: `frontend/src/components/release/*`
-- GraphQL/Apollo client setup: `frontend/src/utils/apolloClient.ts`
+- **App root and routing:** `frontend/src/App.tsx` (Route `/releasemanagement`)
+- **Release list dashboard:** `frontend/src/pages/releasemanagement/index.tsx`
+- **Release/Task Detail View:** `frontend/src/pages/taskRelease/taskRelease/index.tsx`
+- **My Tasks View:** `frontend/src/pages/taskRelease/UserTask/UserTaskList.tsx`
 
-## Where each major operation is handled
+## Where each major GraphQL call is used
 
-- Create release  
-  Handled in create release modal (`AddReleaseModal.tsx`)
-
-- View releases (list)  
-  Handled in `frontend/src/pages/release/index.tsx`
-
-- View release details  
-  Handled in `frontend/src/pages/release/ReleaseDetail.tsx`
-
-- Add/manage tasks  
-  Handled within release detail page and task modal components
-
-- Acceptance flow (Acceptance Mail)  
-  Triggered from release detail/task view actions
-
-- Confirmation flow (Confirmation Mail)  
-  Triggered after all tasks are accepted within release detail view
-
-- Release status updates  
-  Managed in release detail page (stage transitions)
+- `listreleasebyparent`
+  Used in `src/pages/releasemanagement/handler.ts` (populating the main release dashboard).
+- `CreateRelease`
+  Used in `src/components/addModal.tsx`.
+- `UpdateRelease`
+  Used across `src/components/updateModal.tsx` and stage transitions (like `ReleaseProgressButtonModal`).
+- `listtaskReleasebyparent`
+  Used in `src/pages/taskRelease/taskRelease/handler.ts` (drilling down into a release).
+- `CreateTaskRelease` / `UpdateTaskRelease`
+  Used in `taskRelease/addModal/addModal.tsx`, `updateModal.tsx`, and acceptance action modals.
+- `listtaskReleasebytaskAssignedToPerson`
+  Used in `src/pages/taskRelease/UserTask/handler.ts` for individual workloads.
+- Email Mutations (`SendTaskAcceptanceEmail`, `SendConfirmationEmail`, `SendProgressEmail`)
+  Triggered from specialized modal components inside `taskRelease/acceptanceModal/` and `confirmationEmail/`.
 
 ## Where users interact in UI
-
-- **List and actions:** Release main screen (Release dashboard)
-- **Details:** release-specific screen (selected release view)
-- **Tasks:** managed inside the release detail page
-- **My Tasks:** user-specific assigned tasks view
-- **Mutations:** create release, add tasks, send mails, and update status from UI actions
-
-## Where this module sits in DevOpsArk
-
-Release Management is a dedicated module integrated into DevOpsArk, typically available as its own section in the platform.
-
-It is built using shared DevOpsArk UI components such as:
-
-- `Navbar`
-- `Sidebar`
-- `Table`
-- `Form/Modal components`
-
-and follows the same design and interaction patterns as other modules for consistency.
+The primary flow happens between the main Release List (`/releasemanagement`), drilling down into Task Lists (`/releasemanagement/:releaseID`), and tracking personal obligations on My Tasks. Status transitions happen through modals containing explicit UX (like `acceptanceModal` and `confirmationEmail`).
