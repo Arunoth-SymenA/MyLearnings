@@ -2,15 +2,6 @@
 
 This document explains the step-by-step frontend workflow mapping to the GraphQL tier.
 
-## 1) Initialization (The Draft Stage)
-1. User clicks **Add New Release**, triggering the `AddModal`.
-2. Upon saving valid input (Dates, Name, Note, Rollback), the frontend fires `CreateRelease(input)`. 
-3. The table refreshes via `listreleasebyparent()`. The release is placed in the **Draft** stage.
-
-## 2) Task Assignment
-1. Selecting the release routes the user to the Task List.
-2. Clicking 'Add Task' opens a modal. Saving fires `CreateTaskRelease(input)` to bind sub-tasks to the specific release.
-
 ## 3) Acceptance Workflow
 1. Once ready, the user triggers the "Send Acceptance Mail", firing the `SendTaskAcceptanceEmail` mutation.
 2. Assignees locate their assignments via `listtaskReleasebytaskAssignedToPerson` in the **My Tasks** screen.
