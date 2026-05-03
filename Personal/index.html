@@ -1,1 +1,84 @@
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Lato:wght@300;400&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+.invite{background:linear-gradient(160deg,#ffffff 0%,#fbf9fc 60%,#EFE9F5 100%);border:0.5px solid rgba(144,83,161,0.3);border-radius:var(--border-radius-lg);padding:2.5rem 2rem 2rem;max-width:640px;margin:0 auto;text-align:center;position:relative;overflow:hidden}
+.invite::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#421A4C,#9053A1,#421A4C)}
+.cross{font-size:30px;font-weight:bold;color:#9053A1;margin-bottom:0.5rem;letter-spacing:6px}
+.tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:#421A4C;opacity:0.8;margin-bottom:1.2rem;line-height:1.6}
+.names{font-family:'Playfair Display',serif;font-size:32px;font-weight:500;color:#421A4C;margin-bottom:0.3rem;letter-spacing:1px}
+.ampersand{color:#9053A1;font-style:italic}
+.divider{display:flex;align-items:center;gap:12px;margin:1rem 0;color:#9053A1;font-size:12px}
+.divider::before,.divider::after{content:'';flex:1;height:0.5px;background:rgba(144,83,161,0.3)}
+.section-card{background:#ffffff;border:0.5px solid rgba(144,83,161,0.3);border-radius:var(--border-radius-md);padding:1rem 1.25rem;margin:0.75rem 0;text-align:left}
+.section-header{display:flex;align-items:center;gap:10px;margin-bottom:0.75rem}
+.badge{background:#9053A1;color:#fff;font-size:11px;font-weight:500;padding:3px 10px;border-radius:20px;letter-spacing:0.5px}
+.event-title{font-family:'Playfair Display',serif;font-size:16px;color:#421A4C;font-weight:500}
+.detail-row{display:flex;align-items:flex-start;gap:10px;margin:6px 0;font-size:13px;color:#421A4C;opacity:0.9}
+.detail-icon{font-size:14px;margin-top:1px;flex-shrink:0;color:#9053A1}
+.detail-text{line-height:1.5;color:#421A4C}
+.map-btn{display:inline-flex;align-items:center;gap:6px;margin-top:0.5rem;padding:6px 14px;border:0.5px solid #9053A1;border-radius:20px;font-size:12px;color:#9053A1;text-decoration:none;background:#ffffff;cursor:pointer;transition:background 0.2s}
+.map-btn:hover{background:#EFE9F5}
+.route-section{margin-top:0.75rem;padding-top:0.75rem;border-top:0.5px dashed rgba(144,83,161,0.3)}
+.route-title{font-size:11px;font-weight:500;color:#9053A1;letter-spacing:0.5px;margin-bottom:0.5rem;text-transform:uppercase}
+.route-links{display:flex;flex-wrap:wrap;gap:8px}
+.route-pill{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border:0.5px solid rgba(144,83,161,0.3);border-radius:20px;font-size:12px;color:#421A4C;text-decoration:none;background:#ffffff}
+.route-pill:hover{background:#EFE9F5}
+.footer-text{font-family:'Playfair Display',serif;font-style:italic;font-size:13px;color:#421A4C;opacity:0.8;margin-top:1.2rem;line-height:1.8}
+.footer-names{font-family:'Playfair Display',serif;font-size:15px;color:#421A4C;margin-top:0.5rem;font-weight:500}
+</style>
 
+<div class="invite">
+  <div class="cross">&#10013;</div>
+  <p class="tagline">With joyful hearts and grateful spirits, we invite you to celebrate<br>the beginning of our forever journey in Christ.</p>
+
+  <div class="names">Allwin <span class="ampersand">&</span> Kiruba</div>
+
+  <div class="divider">&#10022; May 13, 2026 &#10022;</div>
+
+  <div class="section-card">
+    <div class="section-header">
+      <span class="badge">WEDDING CEREMONY</span>
+      <span class="event-title">3:30 PM</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-icon">&#9962;</span>
+      <span class="detail-text"><strong>New Creation Church</strong><br>A.R. Nagar, Mangamma Salai, Sithurajapuram, Sivakasi - 626 189</span>
+    </div>
+    <a class="map-btn" href="https://maps.app.goo.gl/xE11m9MV9SpU3AWH8" target="_blank">
+      &#128205; Open in Maps
+    </a>
+    <div class="route-section">
+      <div class="route-title">Get directions from</div>
+      <div class="route-links">
+        <a class="route-pill" href="https://maps.app.goo.gl/X7WQmsoEt1HQKzF96" target="_blank">&#128643; Sivakasi Railway Station</a>
+        <a class="route-pill" href="https://maps.app.goo.gl/y6PKec4KymYkzrKBA" target="_blank">&#128652; Sivakasi Bus Stand</a>
+        <a class="route-pill" href="https://maps.app.goo.gl/gvUgwH9kCkDGrgzi6" target="_blank">&#128652; Sattur Railway Station(SRT)</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="section-header">
+      <span class="badge">RECEPTION</span>
+      <span class="event-title">6:00 PM</span>
+    </div>
+    <div class="detail-row">
+      <span class="detail-icon">&#127963;</span>
+      <span class="detail-text"><strong>Nachiyar Mahal</strong><br>Sithurajapuram Main Road, Sivakasi - 626 189</span>
+    </div>
+    <a class="map-btn" href="https://maps.app.goo.gl/cnktdcKQUyG7UfUy6" target="_blank">
+      &#128205; Open in Maps
+    </a>
+    <div class="route-section">
+      <div class="route-title">Get directions from</div>
+      <div class="route-links">
+        <a class="route-pill" href="https://maps.app.goo.gl/Juc7zkaopGZsTVuJ8" target="_blank">&#128643; Sivakasi Railway Station</a>
+        <a class="route-pill" href="https://maps.app.goo.gl/N2jSpip16vix5pHZ8" target="_blank">&#128652; Sivakasi Bus Stand</a>
+        <a class="route-pill" href="https://maps.app.goo.gl/twamAXjbDFScSgME6" target="_blank">&#128652; Sattur Railway Station(SRT)</a>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-text">Join us as we celebrate with our family and friends.<br>We would be honoured by your loving presence<br>as we step into this new season of life together.</p>
+  <p class="footer-names">- Allwin & Kiruba</p>
+</div>
