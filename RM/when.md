@@ -5,7 +5,6 @@ Use the Release Management module whenever you need to coordinate deployment act
 ## Best-fit scenarios
 - You have a scheduled production rollout and need a reliable way to assign and track tasks.
 - You are handling an emergency fix and need to document sub-tasks and the rollback plan.
-- You need a documented audit trail tracked via task acceptance status and confirmation mails.
 
 ## When to use each primary action
 - **Create (`CreateRelease` / `CreateTaskRelease`):** Starting a new tracked rollout and initially assigning work.
